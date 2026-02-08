@@ -147,7 +147,7 @@ function showTab(tabId) {
 
 // تابع انگلیسی
 function showEnglish() {
-    alert('English version is under development.\n\nFor English inquiries, please contact us at:\n📧 info@zeroohm.com\n📞 +98 21 76543210');
+    alert('English version is under development.\n\nFor English inquiries, please contact us at:\n📧 info@0hm.ir\n📞 +98 13 44266134');
     return false;
 }
 
