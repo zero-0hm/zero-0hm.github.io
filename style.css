@@ -357,6 +357,8 @@ a:hover {
     border: 1px solid #d1d5db;
     border-radius: 8px;
     font-size: clamp(10px, 1vw, 12px);
+    position: relative; /* برای قرارگیری آیکون‌ها */
+    padding-left: 60px; /* ایجاد فضا برای آیکون‌ها در سمت چپ */
 }
 
 .contact-box strong {
@@ -364,6 +366,55 @@ a:hover {
     display: block;
     margin-bottom: 8px;
     font-size: clamp(11px, 1.1vw, 13px);
+}
+
+/* استایل‌های جدید برای آیکون‌های شبکه‌های اجتماعی */
+.contact-social-icons {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: #f3f4f6;
+    color: #4b5563;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.social-icon.telegram:hover {
+    background: #0088cc;
+    color: white;
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    color: white;
+}
+
+.social-icon.eitaa:hover {
+    background: #00aaff;
+    color: white;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
 }
 
 /* محتوای اصلی */
@@ -772,6 +823,23 @@ a:hover {
     .products-overview {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* تنظیم آیکون‌های شبکه‌های اجتماعی برای صفحات کوچک */
+    .contact-social-icons {
+        left: 10px;
+        top: 10px;
+        gap: 8px;
+    }
+    
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -801,11 +869,20 @@ a:hover {
     .contact-box {
         width: 100%;
         margin-top: 10px;
+        padding-left: 15px; /* بازنشانی padding برای حالت موبایل */
     }
     
     .contact-box-enamad {
         width: 100%;
         margin-top: 10px;
+    }
+    
+    /* تنظیم آیکون‌های شبکه‌های اجتماعی برای حالت موبایل */
+    .contact-social-icons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 15px;
     }
 }
 
@@ -852,6 +929,18 @@ a:hover {
         width: 100%;
         height: 120px;
     }
+    
+    /* تنظیم آیکون‌های شبکه‌های اجتماعی برای موبایل */
+    .contact-box {
+        padding-left: 15px;
+    }
+    
+    .contact-social-icons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
 }
 
 /* حالت پرینت */
@@ -866,7 +955,7 @@ a:hover {
         border: 1px solid #ddd;
     }
     
-    .nav-container, .banner-badge, .btn {
+    .nav-container, .banner-badge, .btn, .contact-social-icons {
         display: none;
     }
 }
